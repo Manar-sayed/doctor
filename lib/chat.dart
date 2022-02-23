@@ -1,0 +1,403 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+
+class chat extends StatefulWidget {
+  const chat({Key? key}) : super(key: key);
+
+  @override
+  _chatState createState() => _chatState();
+}
+
+class _chatState extends State<chat> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Color.fromRGBO(6, 187, 192, 10),
+
+    appBar: AppBar(
+    actions: [
+    IconButton(
+    onPressed: () {},
+    icon: Icon(
+    Icons.menu_open_rounded,
+    color: Colors.white,
+    size: 30,
+    ))
+    ],
+    leading: Padding(
+    padding: const EdgeInsets.only(left: 10),
+    child: Container(
+    height: 40,
+    width: 60,
+    child: const Image(
+    image: AssetImage("assets/tameni.png"),
+    fit: BoxFit.contain,
+    ),
+    ),
+    ),
+    // leadingWidth: 100,
+
+
+    backgroundColor: const Color.fromRGBO(6, 187, 192, 10),
+
+    elevation: 0,
+    ),
+    body: Stack(
+
+    children: [
+
+    Container(
+    decoration: const BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.only(
+    topRight: Radius.circular(20),
+    topLeft: Radius.circular(20))),
+    height: MediaQuery.of(context).size.height,
+    width: MediaQuery.of(context).size.width,
+    child:Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: SingleChildScrollView(scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text(
+                "الاستشارات ",
+                style: GoogleFonts.roboto(
+                    textStyle: TextStyle(
+                        fontSize: 26, fontWeight: FontWeight.bold)),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                Icon(Icons.add_circle_outline,color:  Color.fromRGBO(6, 187, 192, 10),size: 44,),
+                SizedBox(width: 30,),
+                Container(
+                  decoration: BoxDecoration(
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color.fromRGBO(137, 201, 203,100),
+                          blurRadius: 3,
+                          spreadRadius: .5,
+                          offset: Offset(0,2 ),
+                        ),
+                      ],
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15)),
+                  height: 50,
+                  width: MediaQuery.of(context).size.width * .66,
+                  child: TextFormField(
+                    textAlign: TextAlign.end,
+                    // controller: controller,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.search,color: Colors.grey[400]),
+                      disabledBorder: InputBorder.none,
+                      hintText: ' بحث',
+
+
+                      hintStyle: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 20,letterSpacing: 2,),
+
+                      border: const OutlineInputBorder(
+                        //borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                ),
+              ],),
+            ),
+            SizedBox(height: 10,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0,vertical: 0),
+              child: Row(mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                Text(
+                  "المؤرشفة ",
+                  style: GoogleFonts.roboto(
+                      textStyle: TextStyle(
+                          fontSize: 24, fontWeight: FontWeight.bold),color: Color.fromRGBO(6, 187, 192, 10),),
+                ),
+                SizedBox(width: 20,),
+                Column(
+
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Text(
+                        "الكل ",
+                        style: GoogleFonts.roboto(
+                            textStyle: TextStyle(
+                                fontSize: 24, fontWeight: FontWeight.bold,color: Color.fromRGBO(6, 187, 192, 10),)),
+                      ),
+                    ),
+                    Container(width: 60,height: 5,decoration: BoxDecoration(color: Color.fromRGBO(6, 187, 192, 30),
+                        borderRadius: BorderRadius.only(topRight: Radius.circular(15),topLeft: Radius.circular(15))),)
+                  ],
+                ),
+              ],),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Container(height: 2,color: Color.fromRGBO(6, 187, 192, 100),),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
+                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
+                    ],
+                  ),
+                ),
+                Column(crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                  Text(
+                    "أحمد محمد ",
+                    style: GoogleFonts.roboto(
+                      textStyle: TextStyle(
+                          fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
+                  ),
+                  Text(
+                    "أشعر بألم شديد فى هذا الجزء من ",
+
+                    style: GoogleFonts.roboto(
+                      textStyle: TextStyle(
+                          fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
+                  ),
+                ],),
+                Container(
+                  width: 70,
+                  height: 70,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
+                  ),
+                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
+
+
+                ),
+            ],),
+            SizedBox(height: 20),
+            Row(mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
+                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
+                    ],
+                  ),
+                ),
+                Column(crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "أحمد محمد ",
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
+                    ),
+                    Text(
+                      "أشعر بألم شديد فى هذا الجزء من ",
+
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
+                    ),
+                  ],),
+                Container(
+                  width: 70,
+                  height: 70,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
+                  ),
+                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
+
+
+                ),
+              ],),
+            SizedBox(height: 20),
+            Row(mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
+                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
+                    ],
+                  ),
+                ),
+                Column(crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "أحمد محمد ",
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
+                    ),
+                    Text(
+                      "أشعر بألم شديد فى هذا الجزء من ",
+
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
+                    ),
+                  ],),
+                Container(
+                  width: 70,
+                  height: 70,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
+                  ),
+                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
+
+
+                ),
+              ],),
+            SizedBox(height: 20),
+
+            Row(mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
+                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
+                    ],
+                  ),
+                ),
+                Column(crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "أحمد محمد ",
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
+                    ),
+                    Text(
+                      "أشعر بألم شديد فى هذا الجزء من ",
+
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
+                    ),
+                  ],),
+                Container(
+                  width: 70,
+                  height: 70,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
+                  ),
+                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
+
+
+                ),
+              ],),
+            SizedBox(height: 20),
+
+            Row(mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
+                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
+                    ],
+                  ),
+                ),
+                Column(crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "أحمد محمد ",
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
+                    ),
+                    Text(
+                      "أشعر بألم شديد فى هذا الجزء من ",
+
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
+                    ),
+                  ],),
+                Container(
+                  width: 70,
+                  height: 70,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
+                  ),
+                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
+
+
+                ),
+              ],),
+            SizedBox(height: 20),
+            Row(mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
+                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
+                    ],
+                  ),
+                ),
+                Column(crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "أحمد محمد ",
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
+                    ),
+                    Text(
+                      "أشعر بألم شديد فى هذا الجزء من ",
+
+                      style: GoogleFonts.roboto(
+                          textStyle: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
+                    ),
+                  ],),
+                Container(
+                  width: 70,
+                  height: 70,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
+                  ),
+                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
+
+
+                ),
+              ],),
+            SizedBox(height: 20),
+
+
+
+
+
+          ],
+        ),
+      ),
+    ))
+
+    ])
+    );
+  }
+}
