@@ -35,7 +35,7 @@ Widget pact(String text,col)=> Padding(
 
 
                   child: Center(
-                    child: Text(text,style:  TextStyle(color:  col,fontSize: 18,),
+                    child: Text(text,style:  TextStyle(color:  col,fontSize: 18,fontWeight: FontWeight.bold),
 
                     ),
                   ),
@@ -44,7 +44,7 @@ Widget pact(String text,col)=> Padding(
 
                       borderRadius: BorderRadius.circular(15),
 
-                      border: Border.all(width: 2,color:  Color.fromRGBO(6, 187, 192, 10),)
+                      border: Border.all(width: 1,color:  Color.fromRGBO(6, 187, 192, 10),)
                   ),
                   width: 80,
 
@@ -500,4 +500,148 @@ Widget date2()=>Padding(
     ),
 
   ),
+);
+Widget chat1(tt,cll)=>Padding(
+  padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 5),
+  child:   Row(mainAxisAlignment: MainAxisAlignment.end,
+
+
+
+    children: [
+
+
+
+      Column(
+
+
+
+        children: [
+
+
+
+          Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
+
+
+
+          CircleAvatar(radius: 14,backgroundColor:cll,child: Text(tt,style: TextStyle(color: Colors.white),),)
+
+
+
+        ],
+
+
+
+      ),
+
+
+
+      Column(crossAxisAlignment: CrossAxisAlignment.end,
+
+
+
+        children: [
+
+
+
+          Text(
+
+
+
+            "أحمد محمد ",
+
+
+
+            style: GoogleFonts.roboto(
+
+
+
+                textStyle: TextStyle(
+
+
+
+                    fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
+
+
+
+          ),
+
+
+
+          Text(
+
+
+
+            "أشعر بألم شديد فى هذا الجزء من ",
+
+
+
+
+
+
+
+            style: GoogleFonts.roboto(
+
+
+
+                textStyle: TextStyle(
+
+
+
+                    fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
+
+
+
+          ),
+
+
+
+        ],),
+
+
+
+      Container(
+
+
+
+        width: 70,
+
+
+
+        height: 70,
+
+
+
+        decoration: BoxDecoration(
+
+
+
+            borderRadius: BorderRadius.circular(40),
+
+
+
+            image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
+
+
+
+        ),
+
+
+
+        //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
+
+
+
+
+
+
+
+
+
+
+
+      ),
+
+
+
+    ],),
 );

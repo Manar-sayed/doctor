@@ -1,3 +1,4 @@
+import 'package:doctor/widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,6 +12,7 @@ class chat extends StatefulWidget {
 }
 
 class _chatState extends State<chat> {
+  final controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,11 +46,7 @@ class _chatState extends State<chat> {
 
     elevation: 0,
     ),
-    body: Stack(
-
-    children: [
-
-    Container(
+    body: Container(
     decoration: const BoxDecoration(
     color: Colors.white,
     borderRadius: BorderRadius.only(
@@ -58,17 +56,15 @@ class _chatState extends State<chat> {
     width: MediaQuery.of(context).size.width,
     child:Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: SingleChildScrollView(scrollDirection: Axis.vertical,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Text(
-                "الاستشارات ",
-                style: GoogleFonts.roboto(
-                    textStyle: TextStyle(
-                        fontSize: 26, fontWeight: FontWeight.bold)),
-              ),
+            Text(
+              "الاستشارات ",
+              style: GoogleFonts.roboto(
+                  textStyle: TextStyle(
+                      fontSize: 26, fontWeight: FontWeight.bold)),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
@@ -76,7 +72,7 @@ class _chatState extends State<chat> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                 Icon(Icons.add_circle_outline,color:  Color.fromRGBO(6, 187, 192, 10),size: 44,),
-                SizedBox(width: 30,),
+                SizedBox(width: 20,),
                 Container(
                   decoration: BoxDecoration(
                       boxShadow: const [
@@ -145,249 +141,21 @@ class _chatState extends State<chat> {
               padding: const EdgeInsets.only(bottom: 10),
               child: Container(height: 2,color: Color.fromRGBO(6, 187, 192, 100),),
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    children: [
-                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
-                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
-                    ],
-                  ),
-                ),
-                Column(crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                  Text(
-                    "أحمد محمد ",
-                    style: GoogleFonts.roboto(
-                      textStyle: TextStyle(
-                          fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
-                  ),
-                  Text(
-                    "أشعر بألم شديد فى هذا الجزء من ",
+            Flexible(
+              child: ListView(
+                children: [
+                  chat1("",Colors.transparent),
 
-                    style: GoogleFonts.roboto(
-                      textStyle: TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
-                  ),
-                ],),
-                Container(
-                  width: 70,
-                  height: 70,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
-                  ),
-                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
+                  Container(color: Colors.teal.shade50,
+                      child: chat1("2",Color.fromRGBO(6, 187, 192, 10))),
+                  chat1("",Colors.transparent),
+                  chat1("",Colors.transparent),
+                  chat1("",Colors.transparent),
+                  chat1("",Colors.transparent),
 
-
-                ),
-            ],),
-            SizedBox(height: 20),
-            Row(mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    children: [
-                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
-                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
-                    ],
-                  ),
-                ),
-                Column(crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "أحمد محمد ",
-                      style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
-                    ),
-                    Text(
-                      "أشعر بألم شديد فى هذا الجزء من ",
-
-                      style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
-                    ),
-                  ],),
-                Container(
-                  width: 70,
-                  height: 70,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
-                  ),
-                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
-
-
-                ),
-              ],),
-            SizedBox(height: 20),
-            Row(mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    children: [
-                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
-                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
-                    ],
-                  ),
-                ),
-                Column(crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "أحمد محمد ",
-                      style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
-                    ),
-                    Text(
-                      "أشعر بألم شديد فى هذا الجزء من ",
-
-                      style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
-                    ),
-                  ],),
-                Container(
-                  width: 70,
-                  height: 70,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
-                  ),
-                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
-
-
-                ),
-              ],),
-            SizedBox(height: 20),
-
-            Row(mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    children: [
-                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
-                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
-                    ],
-                  ),
-                ),
-                Column(crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "أحمد محمد ",
-                      style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
-                    ),
-                    Text(
-                      "أشعر بألم شديد فى هذا الجزء من ",
-
-                      style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
-                    ),
-                  ],),
-                Container(
-                  width: 70,
-                  height: 70,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
-                  ),
-                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
-
-
-                ),
-              ],),
-            SizedBox(height: 20),
-
-            Row(mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    children: [
-                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
-                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
-                    ],
-                  ),
-                ),
-                Column(crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "أحمد محمد ",
-                      style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
-                    ),
-                    Text(
-                      "أشعر بألم شديد فى هذا الجزء من ",
-
-                      style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
-                    ),
-                  ],),
-                Container(
-                  width: 70,
-                  height: 70,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
-                  ),
-                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
-
-
-                ),
-              ],),
-            SizedBox(height: 20),
-            Row(mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    children: [
-                      Text("3:30م",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
-                      CircleAvatar(radius: 14,backgroundColor:Color.fromRGBO(6, 187, 192, 10),child: Text("2",style: TextStyle(color: Colors.white),),)
-                    ],
-                  ),
-                ),
-                Column(crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "أحمد محمد ",
-                      style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),color:Colors.black),
-                    ),
-                    Text(
-                      "أشعر بألم شديد فى هذا الجزء من ",
-
-                      style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),color:Colors.grey),
-                    ),
-                  ],),
-                Container(
-                  width: 70,
-                  height: 70,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
-                  ),
-                  //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
-
-
-                ),
-              ],),
-            SizedBox(height: 20),
-
+                ],
+              ),
+            )
 
 
 
@@ -396,8 +164,6 @@ class _chatState extends State<chat> {
         ),
       ),
     ))
-
-    ])
     );
   }
 }

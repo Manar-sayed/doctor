@@ -54,7 +54,7 @@ class _signUpState extends State<signUp> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
-                    "تسجيل الدخول ",
+                    "تسجيل دخول ",
                     style: GoogleFonts.roboto(
                       color: Color.fromRGBO(6, 187, 192, 10),
                       fontSize: 26,
