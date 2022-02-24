@@ -1,4 +1,7 @@
+import 'package:doctor/mainHome.dart';
 import 'package:flutter/material.dart';
+
+import 'botton.dart';
 
 class siginsuccess extends StatefulWidget {
 
@@ -12,8 +15,8 @@ class _siginsuccessState extends State<siginsuccess> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      backgroundColor: Color.fromRGBO(212, 255, 254,1),
+backgroundColor: Colors.white,
+      // backgroundColor: Color.fromRGBO(212, 255, 254,1),
 
       body: Center(
         child: Column(
@@ -22,21 +25,24 @@ class _siginsuccessState extends State<siginsuccess> {
             // logo here
            Padding(
              padding: const EdgeInsets.only(bottom: 20),
-             child: Container(width: 200,height: 200,
-               child: Icon(Icons.check,size: 120,color: Colors.white.withOpacity(1)),
-               decoration: BoxDecoration(color: const Color.fromRGBO(6, 187, 192, 150),
-                   borderRadius: BorderRadius.circular(150),
-
-
-
-               boxShadow:  [
-               BoxShadow(
-                 color: Color.fromRGBO(214, 255, 254, 10),
-                 blurRadius: 15,
-                 spreadRadius: 15,
-                 offset: Offset(0, 3),
-               ),
-               ]),),
+             child: Container(width: 160,height: 160,
+               child:Image(image: NetworkImage("https://cdn-icons-png.flaticon.com/128/1293/1293029.png"),),
+               // child: Icon(Icons.check,size: 120,color: Colors.white),
+               // decoration: BoxDecoration(color: const Color.fromRGBO(6, 187, 192, 100),
+               //     borderRadius: BorderRadius.circular(150),
+               //
+               //
+               //
+               // boxShadow:  [
+               // BoxShadow(
+               //   color: Colors.white,
+               //   // color: Color.fromRGBO(214, 255, 254, 10),
+               //   blurRadius: 10,
+               //   spreadRadius: 10,
+               //   offset: Offset(0, 3),
+               // ),
+               // ]),
+             ),
            ),
 
 
@@ -72,7 +78,16 @@ class _siginsuccessState extends State<siginsuccess> {
 
                       color:const Color.fromRGBO(6, 187, 192, 1),
 
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BottomNavBar(
+
+                            ),
+                          ),
+                        );
+                      },
 
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       child:Text(

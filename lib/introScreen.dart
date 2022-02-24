@@ -1,4 +1,5 @@
 import 'package:doctor/home.dart';
+import 'package:doctor/welcomDocotr.dart';
 import 'package:flutter/material.dart';
 
 class introScreen extends StatelessWidget {
@@ -10,7 +11,7 @@ class introScreen extends StatelessWidget {
       backgroundColor: Color.fromRGBO(6, 187, 192, 10),
       body: Center (
         child: Padding (
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 140),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,

@@ -270,8 +270,8 @@ class _signInState extends State<signIn> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => signIn(
-                              type: widget.type,
+                            builder: (context) => siginsuccess(
+
                             ),
                           ),
                         );
