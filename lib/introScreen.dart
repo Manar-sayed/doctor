@@ -1,6 +1,7 @@
+
 import 'package:doctor/home.dart';
-import 'package:doctor/welcomDocotr.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class introScreen extends StatelessWidget {
   get color => null;
@@ -8,16 +9,16 @@ class introScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(6, 187, 192, 10),
+      backgroundColor: const Color.fromRGBO(6, 187, 192, 10),
       body: Center (
         child: Padding (
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(right: 30),
+            children:  <Widget>[
+              const Padding(
+                padding: EdgeInsets.only(right: 30),
                 child: Image(height: 90,width: 150,
                   image: AssetImage("assets/tameni.png"),
                   fit: BoxFit.contain,
@@ -33,42 +34,42 @@ class introScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 50,),
-              Image(
+              const SizedBox(height: 50,),
+              const Image(
                 image: AssetImage("assets/logo.png"),
                 fit: BoxFit.contain,
               ),
-              SizedBox(height: 50,),
-              SizedBox(
-                  height: 60,
-                  width:  270,
-                  child: RaisedButton(
-                      color: Colors.white,
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => home(),
+              const SizedBox(height: 50,),
+              FlatButton(
+                child: Text(
+                  'تسجيل الدخول',
+                  style: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                        color: Color.fromRGBO(6, 187, 192, 1),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                color: Colors.white,
+                textColor: Colors.white,
+                minWidth: 260,
+                height: 55,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15)),
+                onPressed: () {
 
-                          ),
-                        );
-                      },
-
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                      child: Text(
-                        'بدأ الإستخدام',
-                        style: TextStyle(
-                          color: Color.fromRGBO(6, 187, 192, 10),
-                          fontSize: 27 ,
-                          fontWeight: FontWeight.bold,
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => home(
 
                         ),
+                      ),
+                    );
 
-
-                      )
-                  )
-
+                },
               ),
+
 
             ],
           ),
