@@ -66,7 +66,7 @@ class _homeState extends State<home> {
                       image:  DecorationImage(
                           image: AssetImage(
 
-                              "assets/doctor (2).png",)),
+                              "assets/patient.png",)),
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
@@ -81,7 +81,16 @@ class _homeState extends State<home> {
                   ),
                 ), //patient image
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const WelcomeDoctor(
+                            type: 1, //doctor
+                          ),
+                        ),
+                      );
+                    },
                     child: Text(
                       'تسجيل الدخول كمريض ؟ ',
                       style: GoogleFonts.notoSerif(

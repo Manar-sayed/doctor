@@ -645,3 +645,45 @@ Widget chat1(tt,cll)=>Padding(
 
     ],),
 );
+
+Widget sigin1(txt)=> Padding(
+  padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 6),
+  child: Container(
+    decoration: BoxDecoration(
+        boxShadow: const [
+          BoxShadow(
+            color: Color.fromRGBO(137, 201, 203, 10),
+            blurRadius: 2.5,
+            spreadRadius: .1,
+            offset: Offset(0, 2),
+          ),
+        ],
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20)),
+    height: 55,
+    width: double.infinity,
+    child: Padding(
+      padding: const EdgeInsets.only(right: 9.0),
+      child: TextFormField(
+        textAlign: TextAlign.end,
+        // controller: controller,
+        decoration: InputDecoration(
+          // prefixIcon: Icon(Icons.search),
+          disabledBorder: InputBorder.none,
+          hintText: txt,
+          hintStyle: TextStyle(
+              color: Colors.grey[400],
+              wordSpacing: 2,
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              letterSpacing: 2),
+
+          border: const OutlineInputBorder(
+            //borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide.none,
+          ),
+        ),
+      ),
+    ),
+  ),
+);
