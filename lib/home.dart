@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 class home extends StatefulWidget {
+  // final int type;
+  // const home({required this.type});
   @override
   _homeState createState() => _homeState();
 }
@@ -61,8 +63,10 @@ class _homeState extends State<home> {
                     width: MediaQuery.of(context).size.width * .66,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                          image: AssetImage("assets/patient.png")),
+                      image:  DecorationImage(
+                          image: AssetImage(
+
+                              "assets/doctor (2).png",)),
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
