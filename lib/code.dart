@@ -67,8 +67,9 @@ class _codeState extends State<code> {
                   Container(
                     width: MediaQuery.of(context).size.width,
                     height: 300,
-                    child: Lottie.network(
-                        "https://assets5.lottiefiles.com/packages/lf20_h7dcmwwl.json"),
+                    child: Lottie.network("https://assets2.lottiefiles.com/packages/lf20_h7dcmwwl.json"
+                        ),
+                      // "https://assets5.lottiefiles.com/packages/lf20_h7dcmwwl.json"
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: 10),
