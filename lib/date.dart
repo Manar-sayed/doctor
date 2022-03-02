@@ -1,3 +1,4 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:doctor/widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,13 @@ class date extends StatefulWidget {
 }
 
 class _dateState extends State<date> {
+  var list = [
+          date2(),
+          date2(),
+          date1(),
+          date2(),
+          date2(),
+  ];
   @override
   DateTimeRange dateRange = DateTimeRange(
     start: DateTime(2022, 2, 22),
@@ -71,6 +79,24 @@ class _dateState extends State<date> {
                       SizedBox(
                         height: 140,
                       ),
+//                       Container(
+//                         width: MediaQuery.of(context).size.width*.6,
+//
+// height: 220,
+//                         child: Swiper(
+//
+//                           itemCount: 5,
+//                           layout: SwiperLayout.DEFAULT,
+//                           autoplay: true,
+//                           pagination: const SwiperPagination(
+//                               builder: SwiperPagination.dots
+//                           ),
+//                           itemBuilder: (BuildContext context, int index) {
+//                             return list[index];
+//                           },
+//                         ),
+//
+//                       ),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(

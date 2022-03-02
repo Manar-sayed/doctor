@@ -1,3 +1,4 @@
+import 'package:doctor/doctor_profile.dart';
 import 'package:flutter/material.dart';
 
 import 'color.dart';
@@ -13,27 +14,48 @@ class MenuScreen extends StatelessWidget {
       child: Directionality(textDirection: TextDirection.rtl,
         child: Scaffold(
             backgroundColor: MyColors().primaryColor,
-            body: Container(
-              margin: const EdgeInsets.only(top: 10,right: 25),
-              alignment: Alignment.topRight,
+            body: Padding(
+              padding: const EdgeInsets.only(right: 10,top: 40),
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+
+
+                children:  [
+
+                  // Padding(
+                  //   padding: const EdgeInsets.only(right: 18,bottom: 10),
+                  //   child: Icon(Icons.menu_open_rounded,color:MyColors().white,size: 30,),
+                  // ),
+                  CircleAvatar(radius: 40,backgroundImage: AssetImage('assets/male doctor.png',),backgroundColor: Colors.white,),
                   Padding(
-                    padding: const EdgeInsets.only(right: 18,bottom: 10),
-                    child: Icon(Icons.menu_open_rounded,color:MyColors().white,size: 30,),
+                    padding: EdgeInsets.only(right: 18,top: 10),
+                    child: WhiteText(text: 'مرحبا', size: 22),
                   ),
-                  const CircleAvatar(radius: 40,backgroundImage: AssetImage('assets/images/1.jpg'),),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 18),
-                    child: WhiteText(text: 'مرحبا', size: 21),
+                  Padding(
+                    padding: EdgeInsets.only(right: 18,bottom: 30),
+                    child: WhiteText(text: 'د. علي ', size: 22),
                   ),
-                  const WhiteText(text: 'علي احمد', size: 21),
-                  const SizedBox(height: 10,),
-                  const TextWithIcon(text: 'الملف الشخصي', icon: Icons.person),
-                  const TextWithIcon(text: 'التنبيهات', icon: Icons.notifications),
-                  const TextWithIcon(text: 'المساعدة', icon:  Icons.help),
-                  const TextWithIcon(text: 'الاعدادات', icon:  Icons.settings,),
-                  const TextWithIcon(text: 'تسجيل الخروج', icon: Icons.logout_outlined),
+                  SizedBox(height: 10,),
+                  InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => doctor_profile(
+
+                            ),
+                          ),
+                        );
+                      },
+                      child: TextWithIcon(text: 'الملف الشخصي', icon: Icons.person)),
+                  SizedBox(height: 7,),
+                  TextWithIcon(text: 'التنبيهات', icon: Icons.notifications),
+                  SizedBox(height: 7,),
+                  TextWithIcon(text: 'المساعدة', icon:  Icons.help),
+                  SizedBox(height: 7,),
+                  TextWithIcon(text: 'الاعدادات', icon:  Icons.settings,),
+                  SizedBox(height: 7,),
+                  TextWithIcon(text: 'تسجيل الخروج', icon: Icons.logout_outlined),
+                  SizedBox(height: 7,),
 
                 ],
               ),
