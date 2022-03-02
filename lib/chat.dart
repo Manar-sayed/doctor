@@ -18,35 +18,36 @@ class _chatState extends State<chat> {
     return Scaffold(
         backgroundColor: Color.fromRGBO(6, 187, 192, 10),
 
-    appBar: AppBar(
-    actions: [
-    IconButton(
-    onPressed: () {},
-    icon: Icon(
-    Icons.menu_open_rounded,
-    color: Colors.white,
-    size: 30,
-    ))
-    ],
-    leading: Padding(
-    padding: const EdgeInsets.only(left: 10),
-    child: Container(
-    height: 40,
-    width: 60,
-    child: const Image(
-    image: AssetImage("assets/tameni.png"),
-    fit: BoxFit.contain,
-    ),
-    ),
-    ),
-    // leadingWidth: 100,
-
-
-    backgroundColor: const Color.fromRGBO(6, 187, 192, 10),
-
-    elevation: 0,
-    ),
+    // appBar: AppBar(
+    // actions: [
+    // IconButton(
+    // onPressed: () {},
+    // icon: Icon(
+    // Icons.menu_open_rounded,
+    // color: Colors.white,
+    // size: 30,
+    // ))
+    // ],
+    // leading: Padding(
+    // padding: const EdgeInsets.only(left: 10),
+    // child: Container(
+    // height: 40,
+    // width: 60,
+    // child: const Image(
+    // image: AssetImage("assets/tameni.png"),
+    // fit: BoxFit.contain,
+    // ),
+    // ),
+    // ),
+    // // leadingWidth: 100,
+    //
+    //
+    // backgroundColor: const Color.fromRGBO(6, 187, 192, 10),
+    //
+    // elevation: 0,
+    // ),
     body: Container(
+        margin: EdgeInsets.only(top: 10),
     decoration: const BoxDecoration(
     color: Colors.white,
     borderRadius: BorderRadius.only(

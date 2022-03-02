@@ -128,7 +128,7 @@ class _codeState extends State<code> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => BottomNavBar()));
+                                      builder: (context) => HomeScreen()));
                             }, // button pressed
                             child: Icon(
                               Icons.done,

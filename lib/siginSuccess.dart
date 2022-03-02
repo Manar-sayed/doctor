@@ -79,7 +79,7 @@ class _siginsuccessState extends State<siginsuccess> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => BottomNavBar(),
+                            builder: (context) => HomeScreen(),
                           ),
                         );
                       },

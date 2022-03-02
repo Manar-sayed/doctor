@@ -16,37 +16,11 @@ class _snippState extends State<snipp> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(6, 187, 192, 1),
-      appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.menu_open_rounded,
-                color: Colors.white,
-                size: 30,
-              ))
-        ],
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Container(
-            height: 40,
-            width: 60,
-            child: const Image(
-              image: AssetImage("assets/tameni.png"),
-              fit: BoxFit.contain,
-            ),
-          ),
-        ),
-        // leadingWidth: 100,
 
-
-        backgroundColor: const Color.fromRGBO(6, 187, 192, 10),
-
-        elevation: 0,
-      ),
       body: Stack(
           children: [
       Container(
+        margin: EdgeInsets.only(top: 10),
       decoration: const BoxDecoration(
       color: Colors.white,
           borderRadius: BorderRadius.only(
