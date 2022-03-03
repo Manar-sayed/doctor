@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'botton.dart';
+
 class doctor_profile extends StatefulWidget {
   @override
   State<doctor_profile> createState() => _doctor_profileState();
@@ -21,14 +23,26 @@ class _doctor_profileState extends State<doctor_profile> {
           Container(
                 child: Padding(
                   padding: const EdgeInsets.only(right: 30, top: 40),
-                  child: Text(
-                    "رجوع",
-                    style: TextStyle(
-                      color: Colors.teal[200],
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeScreen(
+
+                          ),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "رجوع",
+                      style: TextStyle(
+                        color: Colors.teal[200],
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.end,
                     ),
-                    textAlign: TextAlign.end,
                   ),
                 ),
                 width: MediaQuery.of(context).size.width,

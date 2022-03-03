@@ -2,6 +2,7 @@ import 'package:doctor/doctor_profile.dart';
 import 'package:flutter/material.dart';
 
 import 'color.dart';
+import 'doctor_not.dart';
 import 'my_widgets.dart';
 
 
@@ -48,7 +49,18 @@ class MenuScreen extends StatelessWidget {
                       },
                       child: TextWithIcon(text: 'الملف الشخصي', icon: Icons.person)),
                   SizedBox(height: 7,),
-                  TextWithIcon(text: 'التنبيهات', icon: Icons.notifications),
+                  InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => notifacation(
+
+                            ),
+                          ),
+                        );
+                      },
+                      child: TextWithIcon(text: 'التنبيهات', icon: Icons.notifications)),
                   SizedBox(height: 7,),
                   TextWithIcon(text: 'المساعدة', icon:  Icons.help),
                   SizedBox(height: 7,),

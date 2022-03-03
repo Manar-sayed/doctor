@@ -87,7 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
     const chat(),
     const patient(),
   ];
-  int selectedIndex = 0;
+  int _currentindex = 2;
+
   final advancedDrawerController = AdvancedDrawerController();
   GlobalKey<CurvedNavigationBarState> bottomNavigationKey = GlobalKey();
   @override
@@ -163,47 +164,73 @@ class _HomeScreenState extends State<HomeScreen> {
           //   backgroundColor: MyColors().primaryColor,
           //   elevation: 0,
           // ),
-          bottomNavigationBar: CurvedNavigationBar(
-            key: bottomNavigationKey,
+          bottomNavigationBar:
+          CurvedNavigationBar(
+            //key: _bottomNavigationKey,
+            index: 2,
+            height: 60.0,
+            items: const <Widget>[
+              Icon(Icons.text_snippet_outlined, size: 25,color: Colors.white,),
+              Icon(Icons.calendar_today, size: 25,color: Colors.white,),
+              Icon(Icons.home_outlined, size: 25,color: Colors.white,),
+              Icon(Icons.chat_outlined, size: 25,color: Colors.white,),
+              Icon(Icons.perm_identity, size: 25,color: Colors.white,),
+            ],
             color: Color.fromRGBO(6, 187, 192, 10),
             buttonBackgroundColor: Color.fromRGBO(6, 187, 192, 10),
             backgroundColor: Colors.transparent,
             animationCurve: Curves.easeInOut,
             animationDuration: const Duration(milliseconds: 600),
-            items: const [
-              Icon(
-                Icons.text_snippet_outlined,
-                size: 25,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.calendar_today,
-                size: 25,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.home_outlined,
-                size: 25,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.chat_outlined,
-                size: 25,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.perm_identity,
-                size: 25,
-                color: Colors.white,
-              ),
-            ],
             onTap: (index) {
               setState(() {
-                selectedIndex = index;
+                _currentindex = index;
               });
             },
+            letIndexChange: (index) => true,
           ),
-          body: screens[selectedIndex],
+          // CurvedNavigationBar(
+          //   index: 2,
+          //   key: bottomNavigationKey,
+          //   color: Color.fromRGBO(6, 187, 192, 10),
+          //   buttonBackgroundColor: Color.fromRGBO(6, 187, 192, 10),
+          //   backgroundColor: Colors.transparent,
+          //   animationCurve: Curves.easeInOut,
+          //   animationDuration: const Duration(milliseconds: 600),
+          //   items: const [
+          //     Icon(
+          //       Icons.text_snippet_outlined,
+          //       size: 25,
+          //       color: Colors.white,
+          //     ),
+          //     Icon(
+          //       Icons.calendar_today,
+          //       size: 25,
+          //       color: Colors.white,
+          //     ),
+          //     Icon(
+          //       Icons.home_outlined,
+          //       size: 25,
+          //       color: Colors.white,
+          //     ),
+          //     Icon(
+          //       Icons.chat_outlined,
+          //       size: 25,
+          //       color: Colors.white,
+          //     ),
+          //     Icon(
+          //       Icons.perm_identity,
+          //       size: 25,
+          //       color: Colors.white,
+          //     ),
+          //   ],
+          //   onTap: (index) {
+          //     setState(() {
+          //       selectedIndex = index;
+          //     });
+          //   },
+          //   letIndexChange: (index)=>true,
+          // ),
+          body: screens[_currentindex],
         ),
       ),
     );

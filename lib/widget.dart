@@ -687,3 +687,77 @@ Widget sigin1(txt)=> Padding(
     ),
   ),
 );
+
+Widget noti1()=>Padding(
+  padding:
+  const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      const Text("3:30م"),
+      const SizedBox(
+        width: 30,
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          const Text(
+            "إشعار جديد من محمد علي",
+            style: const TextStyle(
+                color: Colors.cyan,
+                fontSize: 16,
+                fontWeight: FontWeight.bold),
+          ),
+          Text(
+            "أرسل علي رسالة جديدة سوف تجدها\n في المراسلة",
+            style: TextStyle(color: Colors.grey[400]),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+      const Icon(
+        Icons.circle_notifications,
+        color: Colors.teal,
+        size: 45,
+      )
+    ],
+  ),
+);
+Widget noti2()=>Padding(
+  padding:
+  const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Text(
+        "3:30م",
+        style: TextStyle(color: Colors.grey.shade400),
+      ),
+      const SizedBox(
+        width: 30,
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+           Text(
+            "إشعار جديد من محمد علي",
+            style:  TextStyle(
+                color: Colors.cyan.shade100,
+                fontSize: 16,
+                fontWeight: FontWeight.bold),
+          ),
+          Text(
+            "أرسل علي رسالة جديدة سوف تجدها\n في المراسلة",
+            style: TextStyle(color: Colors.grey[400]),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+      Icon(
+        Icons.circle_notifications,
+        color: Colors.teal.shade100,
+        size: 45,
+      )
+    ],
+  ),
+);
