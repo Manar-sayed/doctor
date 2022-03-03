@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'chat_room_doctor.dart';
+
 
 class chat extends StatefulWidget {
   const chat({Key? key}) : super(key: key);
@@ -147,8 +149,20 @@ class _chatState extends State<chat> {
                 children: [
                   chat1("",Colors.transparent),
 
-                  Container(color: Colors.teal.shade50,
-                      child: chat1("2",Color.fromRGBO(6, 187, 192, 10))),
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DetailChat(
+
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(color: Colors.teal.shade50,
+                        child: chat1("2",Color.fromRGBO(6, 187, 192, 10))),
+                  ),
                   chat1("",Colors.transparent),
                   chat1("",Colors.transparent),
                   chat1("",Colors.transparent),
