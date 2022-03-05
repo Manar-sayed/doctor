@@ -16,23 +16,23 @@ class _DetailChatState extends State<DetailChat> {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(6, 187, 192, 1),
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
         title: Padding(
           padding: const EdgeInsets.only(top: 7),
           child: Row(
             children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return const HomeScreen();
-                  }));
-                },
-                icon: const Icon(
-                  Icons.arrow_back_ios,
-                  size: 30,
-                ),
-                color: Colors.white,
-              ),
+              // IconButton(
+              //   onPressed: () {
+              //     Navigator.push(context, MaterialPageRoute(builder: (context) {
+              //       return const HomeScreen();
+              //     }));
+              //   },
+              //   icon: const Icon(
+              //     Icons.arrow_back_ios,
+              //     size: 30,
+              //   ),
+              //   color: Colors.white,
+              // ),
               Container(
                   width: 40,
                   height: 40,

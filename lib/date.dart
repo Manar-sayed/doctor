@@ -3,6 +3,10 @@ import 'package:doctor/widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:table_calendar/table_calendar.dart';
+
+import 'calen.dart';
+import 'my_widgets.dart';
 
 
 class date extends StatefulWidget {
@@ -21,41 +25,38 @@ class _dateState extends State<date> {
           date2(),
   ];
   @override
-  DateTimeRange dateRange = DateTimeRange(
-    start: DateTime(2022, 2, 22),
-    end: DateTime(2022, 3, 22),
-  );
+
+  CalendarFormat format = CalendarFormat.month;
+  DateTime selectedDay = DateTime.now();
+  DateTime focusedDay = DateTime.now();
 
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(6, 187, 192, 1),
       appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.menu_open_rounded,
-                color: Colors.white,
-                size: 30,
-              ))
-        ],
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Container(
-            height: 40,
-            width: 60,
-            child: const Image(
-              image: AssetImage("assets/tameni.png"),
-              fit: BoxFit.contain,
-            ),
-          ),
-        ),
-        // leadingWidth: 100,
-
+          elevation: 0,
         backgroundColor: const Color.fromRGBO(6, 187, 192, 10),
-
-        elevation: 0,
+        automaticallyImplyLeading: true,
+        actions: [
+      Padding(
+      padding: const EdgeInsets.only(right: 15),
+      child: Container(
+        height: 40,
+        width: 60,
+        child: const Image(
+          image: AssetImage("assets/tameni.png"),
+          fit: BoxFit.contain,
+        ),
       ),
+
+
+
+
+
+
+
+
+      ),]),
       body: Stack(children: [
         Container(
           decoration: const BoxDecoration(
@@ -64,21 +65,155 @@ class _dateState extends State<date> {
                   topRight: Radius.circular(20), topLeft: Radius.circular(20))),
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: Column(
-                    children: [
-                      TextButton(
-                          onPressed: pickDateRang,
-                          child: Text(
-                            "click here",
-                            style: TextStyle(fontSize: 20),
-                          )),
-                      SizedBox(
-                        height: 140,
-                      ),
+          child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height *.9,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(40),
+                              topRight: Radius.circular(40),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 30, left: 15,top: 5,bottom: 5 ),
+                            child: ListView(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(vertical: 8),
+                                  child: Center(
+                                    child: Text(
+                                      "مواعيدى ",
+
+                                      style: GoogleFonts.roboto(
+                                          textStyle: const TextStyle(
+                                              fontSize: 26, fontWeight: FontWeight.bold),),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 30, left: 45,bottom: 0),
+                                  child: TableCalendar(
+                                    focusedDay: focusedDay,
+                                    firstDay: DateTime(2022),
+                                    lastDay: DateTime(2030),
+                                    calendarFormat: format,
+                                    onFormatChanged: (CalendarFormat _format) {
+                                      setState(() {
+                                        format = _format;
+                                      });
+                                    },
+                                    startingDayOfWeek: StartingDayOfWeek.saturday,
+                                    daysOfWeekVisible: true,
+                                    onDaySelected:
+                                        (DateTime selectDay, DateTime focusDay) {
+                                      setState(() {
+                                        selectedDay = selectDay;
+                                        focusedDay = focusDay;
+                                      });
+                                    },
+                                    rowHeight: 40,
+                                    headerStyle: const HeaderStyle(
+                                        leftChevronIcon: Icon(
+                                          Icons.chevron_left,
+                                          color: Colors.white,
+                                        ),
+                                        rightChevronIcon:  Icon(
+                                          Icons.chevron_right,
+                                          color: Colors.white,
+                                        ),
+                                        formatButtonTextStyle:
+                                         TextStyle(color: Colors.white),
+                                        titleTextStyle:
+                                        TextStyle(color:Colors.white),
+                                        headerPadding: EdgeInsets.all(0.1),
+                                        headerMargin:
+                                        EdgeInsets.symmetric(vertical: 15),
+                                        decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(20),
+                                                topLeft: Radius.circular(20)),
+                                            color: Color.fromRGBO(6, 187, 192, 1),),
+                                        formatButtonVisible: false,
+                                        titleCentered: true),
+                                    calendarStyle: const CalendarStyle(
+                                        todayDecoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color:Color.fromRGBO(6, 187, 192, 1),
+                                        ),
+                                        weekendTextStyle:
+                                        TextStyle(color:Color.fromRGBO(6, 187, 192, 1),),
+                                        defaultTextStyle:
+                                        TextStyle(color: Color.fromRGBO(6, 187, 192, 1),),
+                                        selectedTextStyle:
+                                        TextStyle(color: Colors.white,),
+                                        isTodayHighlighted: false,
+                                        selectedDecoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color:Color.fromRGBO(6, 187, 192, 1),
+                                        )),
+                                    daysOfWeekStyle: const DaysOfWeekStyle(
+                                      weekendStyle:
+                                      const TextStyle(color:Colors.teal),
+                                      weekdayStyle:
+                                      const TextStyle(color:Colors.teal),
+                                    ),
+                                    selectedDayPredicate: (DateTime date) {
+                                      return isSameDay(selectedDay, date);
+                                    },
+                                  ),
+                                ),
+                                // Center(child: GreyText(text: DateTime.now().toString(),)),
+                                SingleChildScrollView(
+                                  padding: EdgeInsets.only(top: 40,),
+                                  scrollDirection: Axis.horizontal,
+                                  child: Row(
+                                    children: [
+                                      date2(),
+                                      date2(),
+                                      date1(),
+                                      date2(),
+                                      date2(),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 40,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                                  child: FlatButton(
+                                    child:  Text(
+                                      "إعادة جدولة ",
+
+                                      style: GoogleFonts.roboto(
+                                        textStyle: const TextStyle(
+                                            fontSize: 20, fontWeight: FontWeight.bold),),
+                                    ),
+                                    color: const Color.fromRGBO(6, 187, 192, 1),
+                                    textColor: Colors.white,
+
+                                    minWidth: 260,
+                                    height: 55,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(15)),
+                                    onPressed: () {
+                                      // Navigator.push(context,
+                                      //     MaterialPageRoute(builder: (context) => signIn()));
+                                    },
+                                  ),
+                                ),
+
+                              ],
+                            ),
+                          ))),
+
 //                       Container(
 //                         width: MediaQuery.of(context).size.width*.6,
 //
@@ -97,55 +232,48 @@ class _dateState extends State<date> {
 //                         ),
 //
 //                       ),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            date2(),
-                            date2(),
-                            date1(),
-                            date2(),
-                            date2(),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 140,
-                      ),
-                      FlatButton(
-                        child: Text(
-                          'تسجيل الدخول',
-                          style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        color: const Color.fromRGBO(6, 187, 192, 1),
-                        textColor: Colors.white,
-                        minWidth: 260,
-                        height: 55,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        onPressed: () {
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) => signIn()));
-                        },
-                      ),
-                    ],
-                  ))),
+//                   SingleChildScrollView(
+//                     scrollDirection: Axis.horizontal,
+//                     child: Row(
+//                       children: [
+//                         date2(),
+//                         date2(),
+//                         date1(),
+//                         date2(),
+//                         date2(),
+//                       ],
+//                     ),
+//                   ),
+//                   const SizedBox(
+//                     height: 60,
+//                   ),
+//                   FlatButton(
+//                     child: Text(
+//                       'تسجيل الدخول',
+//                       style: GoogleFonts.roboto(
+//                         textStyle: const TextStyle(
+//                             color: Colors.white,
+//                             fontSize: 18,
+//                             fontWeight: FontWeight.bold),
+//                       ),
+//                     ),
+//                     color: const Color.fromRGBO(6, 187, 192, 1),
+//                     textColor: Colors.white,
+//                     minWidth: 260,
+//                     height: 55,
+//                     shape: RoundedRectangleBorder(
+//                         borderRadius: BorderRadius.circular(15)),
+//                     onPressed: () {
+//                       // Navigator.push(context,
+//                       //     MaterialPageRoute(builder: (context) => signIn()));
+//                     },
+//                   ),
+                ],
+              )),
         )
       ]),
     );
   }
 
-  Future pickDateRang() async {
-    showDateRangePicker(
-      context: context,
-      firstDate: DateTime(1900),
-      lastDate: DateTime(2100),
-      initialDateRange: dateRange,
-    );
-  }
+
 }
