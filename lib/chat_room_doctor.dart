@@ -34,14 +34,16 @@ class _DetailChatState extends State<DetailChat> {
               //   color: Colors.white,
               // ),
               Container(
-                  width: 40,
-                  height: 40,
+                  width: 50,
+                  height: 50,
                   child: Stack(children: [
-                    ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: const Image(
-                          image: AssetImage("assets/male doctor.jpg"),
-                        )),
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          image: DecorationImage(
+                              image: AssetImage("assets/45.jpg"),
+                              fit: BoxFit.cover),),
+                    ),
                     Align(
                       alignment: Alignment.topRight,
                       child: Container(
@@ -91,8 +93,8 @@ class _DetailChatState extends State<DetailChat> {
         elevation: 0,
       ),
       body: Container(
-        margin:  EdgeInsets.only(top: 10),
-        decoration:  BoxDecoration(
+        margin: EdgeInsets.only(top: 10),
+        decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(20), topLeft: Radius.circular(20))),
@@ -110,13 +112,13 @@ class _DetailChatState extends State<DetailChat> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
-                  BoxShadow(
-                    color: Color.fromRGBO(137, 201, 203, 40),
-                    blurRadius: 3,
-                    spreadRadius: .3,
-                    offset: Offset(0, 2),
-                  ),
-                ],
+                    BoxShadow(
+                      color: Color.fromRGBO(137, 201, 203, 40),
+                      blurRadius: 3,
+                      spreadRadius: .3,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
                   color: Colors.white,
                 ),
                 child: Row(
@@ -283,9 +285,9 @@ class _DetailChatState extends State<DetailChat> {
                     child: Stack(alignment: Alignment.center, children: [
                       ClipRRect(
                         borderRadius: const BorderRadius.only(
-                            topRight: Radius.circular(25),
+                          topRight: Radius.circular(25),
                           topLeft: Radius.circular(25),
-                          bottomRight:  Radius.circular(25),
+                          bottomRight: Radius.circular(25),
                         ),
                         child: Image.asset("assets/leg.jpg"),
                       )
@@ -351,27 +353,35 @@ class _DetailChatState extends State<DetailChat> {
                             color: Color.fromRGBO(6, 187, 192, 10),
                           ),
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 0),
+                            padding: const EdgeInsets.symmetric(horizontal: 0),
                             child: Stack(
                               clipBehavior: Clip.none,
                               alignment: Alignment.center,
                               children: [
-                                Container(width: 180,height: 3,color: Colors.grey[300],),Container(width: 100,height: 3,color: Color.fromRGBO(6, 187, 192, 10),margin: EdgeInsets.only(right: 100),),
+                                Container(
+                                  width: 180,
+                                  height: 3,
+                                  color: Colors.grey[300],
+                                ),
+                                Container(
+                                  width: 100,
+                                  height: 3,
+                                  color: Color.fromRGBO(6, 187, 192, 10),
+                                  margin: EdgeInsets.only(right: 100),
+                                ),
                                 Container(
                                   height: 8,
                                   width: 150,
                                   decoration: const BoxDecoration(
-                                    color: Colors.blueGrey,
+                                    color: Colors.cyan,
                                     shape: BoxShape.circle,
                                   ),
                                 )
                               ],
                             ),
                           ),
-
                           const Text(
-                            "0.30/1:20",
+                            "0.30/1:00",
                             style: TextStyle(fontSize: 12, color: Colors.grey),
                           ),
                         ],
@@ -388,8 +398,7 @@ class _DetailChatState extends State<DetailChat> {
                       //       fontWeight: FontWeight.bold,
                       //       fontSize: 16),
                       // )),
-                    )),//record
-
+                    )), //record
               ],
             ),
           ),

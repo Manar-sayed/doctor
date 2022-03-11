@@ -32,8 +32,8 @@ class _snippState extends State<snipp> {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
-          Container(width: MediaQuery.of(context).size.width*.3,
-          height: 160,
+          Container(width: MediaQuery.of(context).size.width,
+          height: 180,
           child: InkWell(onTap: (){
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => medical_prescription()));
@@ -98,10 +98,10 @@ class _snippState extends State<snipp> {
               child: Container(
                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Icon(Icons.text_snippet_outlined,color: Colors.grey,size: 25,),
-                      SizedBox(width: 30,),
+                      Icon(Icons.arrow_drop_down,color: Colors.grey,size: 35,),
+                      SizedBox(width: 40,),
                       Text(
-                        " روشتة علاج",
+                        " طلب تحويل",
                         style: GoogleFonts.roboto(
                             textStyle: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold)),

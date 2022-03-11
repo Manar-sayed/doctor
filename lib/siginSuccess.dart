@@ -25,9 +25,9 @@ class _siginsuccessState extends State<siginsuccess> {
             children: [
               // logo here
               Container(
-                width: MediaQuery.of(context).size.width, height: 200,
-                child: Lottie.network(
-                    "https://assets2.lottiefiles.com/private_files/lf30_rxa1croq.json"),
+                width: MediaQuery.of(context).size.width, height: 300,
+                child: Lottie.asset(
+                    "assets/check2.json"),
                 // child:Image(image: NetworkImage("https://cdn-icons-png.flaticon.com/128/1293/1293029.png"),),
                 // child: Icon(Icons.check,size: 120,color: Colors.white),
                 // decoration: BoxDecoration(color: const Color.fromRGBO(6, 187, 192, 100),

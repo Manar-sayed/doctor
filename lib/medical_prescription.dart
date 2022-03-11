@@ -71,11 +71,11 @@ class _medical_prescriptionState extends State<medical_prescription> {
               ],
               color: Colors.white,
               borderRadius: BorderRadius.circular(10)),
-          height: MediaQuery.of(context).size.height*.55,
+          height: MediaQuery.of(context).size.height*.54,
           width:MediaQuery.of(context).size.width*.9,
         child:Column(children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 6),
+            padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 10),
             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
               CircleAvatar(
@@ -102,7 +102,7 @@ class _medical_prescriptionState extends State<medical_prescription> {
             ],),
           ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 3),
+          padding: const EdgeInsets.symmetric(vertical: 5),
           child: Container(height: 1,
           color: Colors.teal[100],),
         ),
@@ -124,7 +124,7 @@ class _medical_prescriptionState extends State<medical_prescription> {
                       fontSize: 16, fontWeight: FontWeight.bold,color: Colors.grey)),
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 30,),
           Padding(
             padding: const EdgeInsets.only(right: 110,top: 30,bottom: 5),
             child: Text(
@@ -145,13 +145,13 @@ class _medical_prescriptionState extends State<medical_prescription> {
           ),
           SizedBox(height: 20,),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 3),
+            padding: const EdgeInsets.symmetric(vertical: 7),
             child: Container(height: 1,
               color: Colors.teal[100],),
           ),
 
           Padding(
-            padding: const EdgeInsets.only(left: 20,right: 20,top: 7,),
+            padding: const EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 3),
             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
 
@@ -214,7 +214,7 @@ class _medical_prescriptionState extends State<medical_prescription> {
                 minWidth: 180,
                 height: 55,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
+                    borderRadius: BorderRadius.only(bottomRight: Radius.circular(25),)),
                 onPressed: () {
                   // Navigator.push(context,
                   //     MaterialPageRoute(builder: (context) => signIn()));
@@ -227,13 +227,16 @@ class _medical_prescriptionState extends State<medical_prescription> {
               style: GoogleFonts.roboto(
               textStyle: TextStyle(color:Colors.white,fontSize: 22,fontWeight: FontWeight.bold),)
               ),
+              
 
               color: const Color.fromRGBO(6, 187, 192, 1),
+              
               textColor: Colors.white,
               minWidth: 180,
               height: 55,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
+                
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(25))),
               onPressed: () {
                 // Navigator.push(context,
                 //     MaterialPageRoute(builder: (context) => signIn()));

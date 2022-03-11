@@ -74,7 +74,7 @@ Widget pact(String text,col)=> Padding(
             height: 70,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
-                image: DecorationImage(image: NetworkImage("https://i.pinimg.com/236x/79/28/b7/7928b7b2963bd5711ee4cab35d94f49d.jpg"),fit: BoxFit.cover)
+                image: DecorationImage(image: AssetImage("assets/45.jpg"),fit: BoxFit.cover)
             ),
             //  child: Image(image:NetworkImage("https://i.pinimg.com/564x/ab/55/94/ab559469b76c104a8d2cb3dba5387485.jpg"),),
 
@@ -619,7 +619,7 @@ Widget chat1(tt,cll)=>Padding(
 
 
 
-            image: DecorationImage(image: AssetImage("assets/m4.jpg"),fit: BoxFit.cover)
+            image: DecorationImage(image: AssetImage("assets/44.jpg"),fit: BoxFit.cover)
 
 
 

@@ -41,7 +41,7 @@ class _signUpState extends State<signUp> {
           elevation: 0,
         ),
         body: Container(
-          margin: EdgeInsets.only(top: 10),
+
           decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(

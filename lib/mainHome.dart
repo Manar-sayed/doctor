@@ -79,7 +79,7 @@ class _mainHomeState extends State<mainHome> {
                       backgroundColor: Colors.transparent,
                       radius: 30,
                       child: Image(
-                        image: AssetImage("assets/doctor (2).png"),
+                        image: AssetImage("assets/male doctor.png"),
                       ),
                     ),
                   ],
