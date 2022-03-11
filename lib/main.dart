@@ -1,8 +1,8 @@
-import 'package:doctor/splash.dart';
+import 'package:doctor/log/splash.dart';
 import 'package:flutter/material.dart';
 
 
-import 'home.dart';
+import 'log/home.dart';
 
 void main() {
   runApp(const MyApp());

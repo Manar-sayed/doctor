@@ -294,9 +294,9 @@ Widget date1()=>Padding(
 
         ),
 
-        Container(height: .5,width: 200,
+        Container(height: 1,width: 200,
 
-          color: Colors.teal.shade200,
+          color: Colors.teal.shade100,
 
         ),
 
@@ -316,9 +316,9 @@ Widget date1()=>Padding(
 
         ),
 
-        Container(height: .5,width: double.infinity*.45,
+        Container(height: .5,width: 200,
 
-          color: Colors.teal.shade200,
+            color: Colors.teal.shade200,
 
         ),
 
