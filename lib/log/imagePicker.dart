@@ -69,7 +69,7 @@ class _BuildImagePickerState extends State<BuildImagePicker> {
           ),
           replacement: Container(
             width: MediaQuery.of(context).size.width * .8,
-            height: MediaQuery.of(context).size.width * .9,
+            height: MediaQuery.of(context).size.height * .9,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: FileImage(fileImage ?? File("")),
